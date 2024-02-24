@@ -5,7 +5,7 @@ builder.Services.AddDbContext<TodoDb>(opt => opt.UseInMemoryDatabase("TodoList")
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var app = builder.Build();
 
-// splitting the endpoints into groups
+// splitting the endpoints into groups or routes
 var TDITEM = app.MapGroup("/todoitems");
 
 TDITEM.MapGet("/", async (TodoDb db) =>
